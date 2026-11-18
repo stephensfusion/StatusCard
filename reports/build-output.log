@@ -1,0 +1,32 @@
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'nano-status-card'
+------------------------------------------------------------------------------
+- Compiling with Angular sources in partial compilation mode.
+[32m√[39m Compiling with Angular sources in partial compilation mode.
+- Writing FESM and DTS bundles
+[32m√[39m Writing FESM and DTS bundles
+- Copying assets
+[32m√[39m Copying assets
+- Writing package manifest
+[32m√[39m Writing package manifest
+[32m√[39m Built nano-status-card
+
+------------------------------------------------------------------------------
+Building entry point 'nano-status-card/testing'
+------------------------------------------------------------------------------
+- Compiling with Angular sources in partial compilation mode.
+[32m√[39m Compiling with Angular sources in partial compilation mode.
+- Writing FESM and DTS bundles
+[32m√[39m Writing FESM and DTS bundles
+[32m√[39m Built nano-status-card/testing
+
+------------------------------------------------------------------------------
+Built Angular Package
+- from: D:/requirements/frontend/NS PLATFORM/StatusCard/nano-status-card-workspace/projects/nano-status-card
+- to:   D:/requirements/frontend/NS PLATFORM/StatusCard/nano-status-card-workspace/dist/nano-status-card
+------------------------------------------------------------------------------
+
+Build at: 2026-11-17T14:07:01.344Z - Time: 957ms
+

@@ -1,0 +1,13 @@
+@if (cards().length > 0) {
+  <ul class="nsc-list">
+    @for (card of cards(); track $index) {
+      <li class="nsc-card" [class]="card.containerClass">
+        <div class="nsc-text">
+          <p class="nsc-title">{{ card.title }}</p>
+          <p class="nsc-value">{{ card.value }}</p>
+        </div>
+        <span class="nsc-icon" [class]="card.iconClass" aria-hidden="true"></span>
+      </li>
+    }
+  </ul>
+}

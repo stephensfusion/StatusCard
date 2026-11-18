@@ -1,0 +1,1066 @@
+{
+  "summary": {
+    "library": "nano-status-card",
+    "angular_version": "22.x",
+    "node_version": "v24.20.0",
+    "total": 50,
+    "passed": 49,
+    "failed": 1,
+    "skipped": 0,
+    "test_files": 4,
+    "execution_time": "7.66s (official run: Duration line of reports/test-console-output.log)",
+    "build_status": "SUCCESS (ng build nano-status-card, exit 0, built nano-status-card and nano-status-card/testing)",
+    "code_coverage": "NOT AVAILABLE: ng test --coverage ran with Coverage enabled with v8, but Vitest printed no coverage table and wrote no coverage output because 1 test failed",
+    "requirement_coverage": "19/22 = 86.4% (requirements with >=1 executed test, matched by ID tag in test name)",
+    "requirements_without_tagged_test": [
+      "FEAT-1",
+      "FEAT-2",
+      "FEAT-3"
+    ],
+    "adversarial": {
+      "run": 14,
+      "passed": 14,
+      "failed": 0
+    }
+  },
+  "normal_tests": [
+    {
+      "id": "T01",
+      "name": "[A11Y][FR-12][single] should expose the title and value, hide the icon from assistive tech, and pass axe",
+      "file": "nano-status-card/src/lib/nano-status-card.a11y.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-12"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 977.1,
+      "input": "Fixture NanoStatusCard with cardInfoData = [FIGMA_CARD]; Figma card rendered",
+      "expected": "single card rendered; li is a list item; title/value textContent equal 'In Progress' / '-'; icon aria-hidden='true' with no text; title and value contrast >= 4.5 against card background; axe WCAG scan has no violations",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T02",
+      "name": "[A11Y][FR-12][sample] should expose every sample card as a list item without axe violations",
+      "file": "nano-status-card/src/lib/nano-status-card.a11y.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-12"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 224.4,
+      "input": "cardInfoData = SAMPLE_CARDS (4 cards)",
+      "expected": "4 li items; each title and value textContent exact; each icon aria-hidden='true'; axe scan has no violations",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T03",
+      "name": "[A11Y][FR-12][empty] should leave an empty collection in the document without axe violations",
+      "file": "nano-status-card/src/lib/nano-status-card.a11y.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-12"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 139.3,
+      "input": "cardInfoData = []",
+      "expected": "host stays connected; 0 cards; host text is empty; axe scan has no violations",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T04",
+      "name": "[A11Y][FR-12][dark] should keep 4.5:1 contrast for title and value in the dark theme",
+      "file": "nano-status-card/src/lib/nano-status-card.a11y.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-12"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 139,
+      "input": "cardInfoData = [FIGMA_CARD]; body gets .e-dark-mode",
+      "expected": "title and value contrast >= 4.5 against the dark card background; axe scan has no violations",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T05",
+      "name": "[A11Y][FR-12][long-title] should keep a long title in the accessibility tree without axe violations",
+      "file": "nano-status-card/src/lib/nano-status-card.a11y.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-12"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 148.1,
+      "input": "cardInfoData = [longTitleCard()] (title 'Requirements Created for the quarterly platform review across every participating squad')",
+      "expected": "card text contains the long title; axe scan has no violations",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T20",
+      "name": "[FR-1][UT-1] should accept cardInfoData when the parent provides a collection",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-1"
+      ],
+      "unit_test_refs": [
+        "UT-1"
+      ],
+      "status": "passed",
+      "duration_ms": 52.3,
+      "input": "fixture.componentRef.setInput('cardInfoData', SAMPLE_CARDS)",
+      "expected": "cardInfoData() toEqual SAMPLE_CARDS",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T21",
+      "name": "[UD-1] should use the nano-status-card selector from the usage documentation",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 3.9,
+      "input": "UsageExampleHost (usage-documentation template)",
+      "expected": "<nano-status-card> element present; <nano-nano-status-card> absent",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T22",
+      "name": "[UD-1][UT-3] should render every card from the usage example in source order",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [],
+      "unit_test_refs": [
+        "UT-3"
+      ],
+      "status": "passed",
+      "duration_ms": 5.9,
+      "input": "UsageExampleHost renders SAMPLE_CARDS",
+      "expected": "card count 4; each card text contains its title and value; carries its containerClass; has icon with its iconClass",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T23",
+      "name": "[FR-2][UT-2] should render the single supplied card",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-2"
+      ],
+      "unit_test_refs": [
+        "UT-2"
+      ],
+      "status": "passed",
+      "duration_ms": 4.3,
+      "input": "cardInfoData = [FIGMA_CARD]",
+      "expected": "1 card; text contains 'In Progress' and '-'; has class 'card-progress'; icon 'icon-progress' present",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T24",
+      "name": "[FR-3][UT-4] should display the title \"Requirements Created\" inside its own card",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-3"
+      ],
+      "unit_test_refs": [
+        "UT-4"
+      ],
+      "status": "passed",
+      "duration_ms": 3.9,
+      "input": "cardInfoData = [card titled 'Requirements Created']",
+      "expected": "title element textContent === 'Requirements Created'",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T25",
+      "name": "[FR-3][UT-4] should display the title \"In Review\" inside its own card",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-3"
+      ],
+      "unit_test_refs": [
+        "UT-4"
+      ],
+      "status": "passed",
+      "duration_ms": 2.5,
+      "input": "cardInfoData = [card titled 'In Review']",
+      "expected": "title element textContent === 'In Review'",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T26",
+      "name": "[FR-3][UT-4] should display the title \"Completed Requirement\" inside its own card",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-3"
+      ],
+      "unit_test_refs": [
+        "UT-4"
+      ],
+      "status": "passed",
+      "duration_ms": 4.3,
+      "input": "cardInfoData = [card titled 'Completed Requirement']",
+      "expected": "title element textContent === 'Completed Requirement'",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T27",
+      "name": "[FR-3][UT-5] should display the value \"01\" verbatim",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-3"
+      ],
+      "unit_test_refs": [
+        "UT-5"
+      ],
+      "status": "passed",
+      "duration_ms": 2.5,
+      "input": "value '01'",
+      "expected": "value element textContent === '01'",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T28",
+      "name": "[FR-3][UT-5] should display the value \"-\" verbatim",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-3"
+      ],
+      "unit_test_refs": [
+        "UT-5"
+      ],
+      "status": "passed",
+      "duration_ms": 2.3,
+      "input": "value '-'",
+      "expected": "value element textContent === '-'",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T29",
+      "name": "[FR-3][UT-5] should display the value \"0\" verbatim",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-3"
+      ],
+      "unit_test_refs": [
+        "UT-5"
+      ],
+      "status": "passed",
+      "duration_ms": 2.7,
+      "input": "value '0'",
+      "expected": "value element textContent === '0'",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T30",
+      "name": "[FR-11][UT-6] should apply every iconClass token on a 48px icon slot",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-11"
+      ],
+      "unit_test_refs": [
+        "UT-6"
+      ],
+      "status": "passed",
+      "duration_ms": 3.2,
+      "input": "iconClass 'e-icons icon-progress'",
+      "expected": "icon slot width and height 48px (+-1); has every class token",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T31",
+      "name": "[FR-8][UT-7] should apply containerClass so a consumer rule can change the card shape",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-8"
+      ],
+      "unit_test_refs": [
+        "UT-7"
+      ],
+      "status": "passed",
+      "duration_ms": 2.6,
+      "input": "containerClass 'consumer-shape' with consumer rule installed",
+      "expected": "card has class 'consumer-shape'; computed borderRadius === '20px'",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T32",
+      "name": "[FR-4][FR-9][UT-8][UT-15] should lay out the Figma card with title above value and the icon at the top end",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-4",
+        "FR-9"
+      ],
+      "unit_test_refs": [
+        "UT-8",
+        "UT-15"
+      ],
+      "status": "passed",
+      "duration_ms": 4.2,
+      "input": "cardInfoData = [FIGMA_CARD]",
+      "expected": "padding 20px on all sides; border 1px; radius 12px; Figma shadow; title left at padding edge; value left aligned with title; value 12px below title; icon top/right at padding edge; icon right of title",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T33",
+      "name": "[FR-9][FR-10][UT-14][UT-15] should use the Figma type styles and the matching BDS colour tokens",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-9",
+        "FR-10"
+      ],
+      "unit_test_refs": [
+        "UT-14",
+        "UT-15"
+      ],
+      "status": "passed",
+      "duration_ms": 3,
+      "input": "cardInfoData = [FIGMA_CARD]",
+      "expected": "title Inter 14px/500/20px colour --color-sf-text-tertiary; value Inter 30px/600/38px colour --color-sf-text-primary; background --color-sf-bg-primary; border --color-sf-border-secondary",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T34",
+      "name": "[FR-6][UT-9] should update every card colour when .e-dark-mode is toggled and the collection is unchanged",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-6"
+      ],
+      "unit_test_refs": [
+        "UT-9"
+      ],
+      "status": "passed",
+      "duration_ms": 5.4,
+      "input": "SAMPLE_CARDS; setDarkMode(true) then setDarkMode(false)",
+      "expected": "dark: every card bg/title/value colour equals resolved BDS token; light: bg rgb(255, 255, 255), title colour rgb(71, 84, 103)",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T35",
+      "name": "[FR-6][UT-10] should keep every icon visible after the theme changes",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-6"
+      ],
+      "unit_test_refs": [
+        "UT-10"
+      ],
+      "status": "passed",
+      "duration_ms": 3.5,
+      "input": "SAMPLE_CARDS; setDarkMode(true)",
+      "expected": "every icon exists, display != none, visibility != hidden, width > 0, height > 0",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T36",
+      "name": "[FR-7][UT-11] should keep the sample cards inside the mobile frame",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-7"
+      ],
+      "unit_test_refs": [
+        "UT-11"
+      ],
+      "status": "passed",
+      "duration_ms": 3,
+      "input": "SAMPLE_CARDS in 320px frame",
+      "expected": "4 cards; layoutProblem === null",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T37",
+      "name": "[FR-7][UT-11] should keep the sample cards inside the tablet frame",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-7"
+      ],
+      "unit_test_refs": [
+        "UT-11"
+      ],
+      "status": "passed",
+      "duration_ms": 2.5,
+      "input": "SAMPLE_CARDS in 768px frame",
+      "expected": "4 cards; layoutProblem === null",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T38",
+      "name": "[FR-7][UT-11] should keep the sample cards inside the desktop frame",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-7"
+      ],
+      "unit_test_refs": [
+        "UT-11"
+      ],
+      "status": "passed",
+      "duration_ms": 2.4,
+      "input": "SAMPLE_CARDS in 1280px frame",
+      "expected": "4 cards; layoutProblem === null",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T39",
+      "name": "[UT-12] should keep a long title inside its card without widening the frame",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [],
+      "unit_test_refs": [
+        "UT-12"
+      ],
+      "status": "passed",
+      "duration_ms": 2.5,
+      "input": "[longTitleCard()] in 320px frame",
+      "expected": "card text contains LONG_TITLE; title rect inside card rect; layoutProblem === null",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T40",
+      "name": "[UT-13] should keep a large value inside its card without overflowing it",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [],
+      "unit_test_refs": [
+        "UT-13"
+      ],
+      "status": "passed",
+      "duration_ms": 2.6,
+      "input": "[largeValueCard()] in 320px frame",
+      "expected": "card text contains LARGE_VALUE; value rect inside card rect; layoutProblem === null",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T41",
+      "name": "[FR-5] should render 0 cards when the parent supplies that many",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-5"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 1.8,
+      "input": "0 cards supplied",
+      "expected": "card count 0",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T42",
+      "name": "[FR-5] should render 1 cards when the parent supplies that many",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-5"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 2.7,
+      "input": "1 card supplied",
+      "expected": "card count 1; card text contains title 'Status 1'",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T43",
+      "name": "[FR-5] should render 8 cards when the parent supplies that many",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-5"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 4.2,
+      "input": "8 cards supplied",
+      "expected": "card count 8; each card text contains its title 'Status n'",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T44",
+      "name": "[FR-2] should show two cards that share a title as two cards",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-2"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 2.6,
+      "input": "two cards with same title 'In Progress', values '01' and '02'",
+      "expected": "2 cards; card 0 contains '01'; card 1 contains '02'; card 0 does not contain '02'",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T45",
+      "name": "[FR-2] should show only the latest collection after successive replacements",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-2"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 3.5,
+      "input": "SAMPLE_CARDS -> [FIGMA_CARD] -> [] -> [SAMPLE_CARDS[2]]",
+      "expected": "1 card with '-' ; then 0 cards; then 1 card containing 'In Review' and not 'Requirements Created'",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T46",
+      "name": "[FEAT-4] should keep type size, padding, and radius stable when the theme changes",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FEAT-4"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 2.3,
+      "input": "FIGMA_CARD; body gets .e-dark-mode",
+      "expected": "title/value font size, padding and radius unchanged; title colour changes",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T47",
+      "name": "[FR-2][FR-3][PBT] should render any collection of titles and values in source order",
+      "file": "nano-status-card/src/lib/nano-status-card.spec.ts",
+      "category": "normal",
+      "requirements": [
+        "FR-2",
+        "FR-3"
+      ],
+      "unit_test_refs": [],
+      "status": "failed",
+      "duration_ms": 945,
+      "input": "fast-check counterexample (shrunk 33 times, seed 20261117): [[{\"title\":\" !\",\"value\":\"\\\"\",\"iconClass\":\"icon-progress\",\"containerClass\":\"card-progress\"}]]",
+      "expected": "getCardText(0) toContain ' !' (runner output: Expected: \" !\")",
+      "actual": "getCardText(0) returned '!\"' (no leading space)",
+      "error_message": " FAIL  |nano-status-card (chromium)| projects/nano-status-card/src/lib/nano-status-card.spec.ts > NanoStatusCard — functional > [FR-2][FR-3][PBT] should render any collection of titles and values in source order\nError: Property failed after 8 tests\n{ seed: 20261117, path: \"7:0:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1\", endOnFailure: true }\nCounterexample: [[{\"title\":\" !\",\"value\":\"\\\"\",\"iconClass\":\"icon-progress\",\"containerClass\":\"card-progress\"}]]\nShrunk 33 time(s)\n\nHint: Enable verbose mode in order to have the list of all failing values encountered during the run\n\nFailure screenshot:\n  - .vitest/attachments/failure-screenshots/nano-status-card.spec.ts/NanoStatusCard---functional----FR-2--FR-3--PBT--should-render-any-collection-of-titles-and-values-in-source-order.png\n\n ❯ buildError node_modules/fast-check/lib/fast-check.js:2469:16\n ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2481:8\n\nCaused by: AssertionError: expected '!\"' to contain ' !'\n\nExpected: \u001b[32m\"\u001b[7m \u001b[27m!\"\u001b[39m\nReceived: \u001b[31m\"!\u001b[7m\"\u001b[27m\"\u001b[39m\n\n ❯ :/requirements/frontend/NS PLATFORM/StatusCard/nano-status-card-workspace/file:/D:/requirements/frontend/NS%20PLATFORM/StatusCard/nano-status-card-workspace/projects/nano-status-card/src/lib/nano-status-card.spec.ts:396:58\n ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19\n ❯ asyncPropertyExecution node_modules/fast-check/lib/fast-check.js:2564:14\n ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2557:15\n ❯ :/requirements/frontend/NS PLATFORM/StatusCard/nano-status-card-workspace/file:/D:/requirements/frontend/NS%20PLATFORM/StatusCard/nano-status-card-workspace/projects/nano-status-card/src/lib/nano-status-card.spec.ts:390:5\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯",
+      "observation": "Observation only (no code changed): the failing assertion is spec.ts:396 expect(await ctx.harness.getCardText(index)).toContain(card.title). NanoStatusCardHarness.getCardText() returns card.text(); CDK TestElement.text() in node_modules/@angular/cdk/fesm2022/testing-testbed.mjs:464 returns (element.textContent || '').trim(), so the leading space of the generated title is removed before the comparison."
+    },
+    {
+      "id": "T48",
+      "name": "[ENV] should load the required BDS 32.1.19 stylesheet",
+      "file": "nano-status-card/src/test/test-environment.spec.ts",
+      "category": "normal",
+      "requirements": [],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 28.6,
+      "input": "document stylesheet link #nano-test-bds-stylesheet",
+      "expected": "link present; href === BDS_STYLESHEET_URL",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T49",
+      "name": "[ENV] should resolve the status-card BDS tokens in the light theme",
+      "file": "nano-status-card/src/test/test-environment.spec.ts",
+      "category": "normal",
+      "requirements": [],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 5.9,
+      "input": "light theme",
+      "expected": "--color-sf-bg-primary rgb(255, 255, 255); text-primary rgb(16, 24, 40); text-tertiary rgb(71, 84, 103); border-secondary rgb(234, 236, 240)",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T50",
+      "name": "[ENV] should switch those tokens when .e-dark-mode is toggled on body",
+      "file": "nano-status-card/src/test/test-environment.spec.ts",
+      "category": "normal",
+      "requirements": [],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 0.6,
+      "input": "toggle .e-dark-mode on body",
+      "expected": "dark: bg rgb(12, 17, 29), text-primary rgb(245, 245, 246), text-tertiary rgb(148, 150, 156), border rgb(31, 36, 47); light restored: bg rgb(255, 255, 255), tertiary rgb(71, 84, 103)",
+      "actual": "NOT CAPTURED"
+    }
+  ],
+  "adversarial_tests": [
+    {
+      "id": "T06",
+      "name": "[ADV][SC-1] should update card and icon appearance in both theme directions",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-1"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 50.1,
+      "input": "cards = [FIGMA_CARD, In Review card]; theme light -> dark -> light",
+      "expected": "dark card background differs from light background; icons exist, display != none, width > 0 in dark; light background and icon width restored after returning to light",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T07",
+      "name": "[ADV][SC-2] should keep 1 cards aligned inside the frame without overlap",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-2"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 4.2,
+      "input": "cardsWithCount(1), frame 1280px",
+      "expected": "1 card; layoutProblem(frame, host) === null",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T08",
+      "name": "[ADV][SC-2] should keep 2 cards aligned inside the frame without overlap",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-2"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 3.5,
+      "input": "cardsWithCount(2), frame 1280px",
+      "expected": "2 cards; layoutProblem(frame, host) === null",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T09",
+      "name": "[ADV][SC-2] should keep 5 cards aligned inside the frame without overlap",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-2"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 3.9,
+      "input": "cardsWithCount(5), frame 1280px",
+      "expected": "5 cards; layoutProblem(frame, host) === null",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T10",
+      "name": "[ADV][SC-2] should keep 12 cards aligned inside the frame without overlap",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-2"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 4.7,
+      "input": "cardsWithCount(12), frame 1280px",
+      "expected": "12 cards; layoutProblem(frame, host) === null",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T11",
+      "name": "[ADV][SC-3] should keep a long title from breaking the card or the frame",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-3"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 3.9,
+      "input": "cards = [longTitleCard(), FIGMA_CARD], frame 768px",
+      "expected": "first card text contains LONG_TITLE; title rect inside card rect; layoutProblem === null",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T12",
+      "name": "[ADV][SC-4] should show a large value without overflowing its card",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-4"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 2.9,
+      "input": "cards = [largeValueCard()] (value '1234567890' x 8), frame 320px",
+      "expected": "card text contains LARGE_VALUE; value rect inside card rect; card.scrollWidth <= card.clientWidth + 1",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T13",
+      "name": "[ADV][SC-5] should still render a card when its strings are empty",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-5"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 2.4,
+      "input": "cards = [{title:'', value:'', iconClass:'', containerClass:''}]",
+      "expected": "host connected; exactly 1 card item",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T14",
+      "name": "[ADV][SC-5] should keep rendering after an incomplete item is replaced by a valid card",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-5"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 2.7,
+      "input": "cards = [{title:'Only title'}] then replaced by [FIGMA_CARD]",
+      "expected": "host connected after incomplete item; after replacement 1 card whose text contains 'In Progress' and '-'",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T15",
+      "name": "[ADV][SC-5] should keep rendering after a null item is replaced by a valid card",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-5"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 2.9,
+      "input": "cards = [null] then replaced by [FIGMA_CARD]",
+      "expected": "host connected after null item; after replacement 1 card whose text contains '-'",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T16",
+      "name": "[ADV][SC-5] should render hostile strings as text and not as elements",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-5"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 4.8,
+      "input": "title '<img src=x onerror=\"alert(1)\">', value '<script>alert(1)</script>'",
+      "expected": "card text contains both strings verbatim; no img or script element in host",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T17",
+      "name": "[ADV][SC-6] should render 1, 4, and 8 cards inside the mobile frame",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-6"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 6.2,
+      "input": "cardsWithCount(1), (4), (8) in 320px frame",
+      "expected": "card count equals requested count for each; layoutProblem === null",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T18",
+      "name": "[ADV][SC-6] should render 1, 4, and 8 cards inside the tablet frame",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-6"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 3.9,
+      "input": "cardsWithCount(1), (4), (8) in 768px frame",
+      "expected": "card count equals requested count for each; layoutProblem === null",
+      "actual": "NOT CAPTURED"
+    },
+    {
+      "id": "T19",
+      "name": "[ADV][SC-6] should render 1, 4, and 8 cards inside the desktop frame",
+      "file": "nano-status-card/src/lib/nano-status-card.adversarial.spec.ts",
+      "category": "adversarial",
+      "requirements": [
+        "SC-6"
+      ],
+      "unit_test_refs": [],
+      "status": "passed",
+      "duration_ms": 4.4,
+      "input": "cardsWithCount(1), (4), (8) in 1280px frame",
+      "expected": "card count equals requested count for each; layoutProblem === null",
+      "actual": "NOT CAPTURED"
+    }
+  ],
+  "traceability": [
+    {
+      "requirement_id": "FR-1",
+      "description": "Accept card data via required cardInfoData input",
+      "component": "NanoStatusCard.cardInfoData (nano-status-card.ts)",
+      "unit_tests": [
+        "T20"
+      ],
+      "adversarial_tests": [],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "FR-2",
+      "description": "Display all cards in the collection",
+      "component": "NanoStatusCard template @for (nano-status-card.html)",
+      "unit_tests": [
+        "T23",
+        "T44",
+        "T45",
+        "T47"
+      ],
+      "adversarial_tests": [],
+      "result": "FAIL"
+    },
+    {
+      "requirement_id": "FR-3",
+      "description": "Display title, value and icon for each card",
+      "component": "nano-status-card.html (.nsc-title, .nsc-value, .nsc-icon)",
+      "unit_tests": [
+        "T24",
+        "T25",
+        "T26",
+        "T27",
+        "T28",
+        "T29",
+        "T47"
+      ],
+      "adversarial_tests": [],
+      "result": "FAIL"
+    },
+    {
+      "requirement_id": "FR-4",
+      "description": "Configurable card shape and element positioning",
+      "component": "nano-status-card.css (.nsc-card, .nsc-text, .nsc-icon)",
+      "unit_tests": [
+        "T32"
+      ],
+      "adversarial_tests": [],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "FR-5",
+      "description": "Render any number of cards",
+      "component": "NanoStatusCard.cards() + template @for",
+      "unit_tests": [
+        "T41",
+        "T42",
+        "T43"
+      ],
+      "adversarial_tests": [],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "FR-6",
+      "description": "Propagate theme changes automatically",
+      "component": "nano-status-card.css (BDS --color-sf-* tokens)",
+      "unit_tests": [
+        "T34",
+        "T35"
+      ],
+      "adversarial_tests": [],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "FR-7",
+      "description": "Arrange cards across screen sizes",
+      "component": "nano-status-card.css (.nsc-list layout)",
+      "unit_tests": [
+        "T36",
+        "T37",
+        "T38"
+      ],
+      "adversarial_tests": [],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "FR-8",
+      "description": "Apply styling via containerClass",
+      "component": "nano-status-card.html ([class]=\"card.containerClass\")",
+      "unit_tests": [
+        "T31"
+      ],
+      "adversarial_tests": [],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "FR-9",
+      "description": "Match approved Figma design (spacing, fonts, colours, layout)",
+      "component": "nano-status-card.css",
+      "unit_tests": [
+        "T32",
+        "T33"
+      ],
+      "adversarial_tests": [],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "FR-10",
+      "description": "Use BDS CSS library as primary styling",
+      "component": "nano-status-card.css (BDS tokens)",
+      "unit_tests": [
+        "T33"
+      ],
+      "adversarial_tests": [],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "FR-11",
+      "description": "Display icons using supplied iconClass",
+      "component": "nano-status-card.html (.nsc-icon [class]=\"card.iconClass\")",
+      "unit_tests": [
+        "T30"
+      ],
+      "adversarial_tests": [],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "FR-12",
+      "description": "Readable content, contrast, accessibility",
+      "component": "nano-status-card.html (ul/li, aria-hidden icon) + css",
+      "unit_tests": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "adversarial_tests": [],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "FEAT-1",
+      "description": "Design matches approved Figma design",
+      "component": "nano-status-card.css",
+      "unit_tests": [],
+      "adversarial_tests": [],
+      "result": "NOT TESTED (no test tagged with this ID)"
+    },
+    {
+      "requirement_id": "FEAT-2",
+      "description": "Light/Dark theme changes propagate automatically",
+      "component": "nano-status-card.css",
+      "unit_tests": [],
+      "adversarial_tests": [],
+      "result": "NOT TESTED (no test tagged with this ID)"
+    },
+    {
+      "requirement_id": "FEAT-3",
+      "description": "Use BDS CSS library for styling",
+      "component": "nano-status-card.css",
+      "unit_tests": [],
+      "adversarial_tests": [],
+      "result": "NOT TESTED (no test tagged with this ID)"
+    },
+    {
+      "requirement_id": "FEAT-4",
+      "description": "Typography, colours, spacing, appearance consistent across themes",
+      "component": "nano-status-card.css",
+      "unit_tests": [
+        "T46"
+      ],
+      "adversarial_tests": [],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "SC-1",
+      "description": "Adversarial 1: Dark<->light theme switching updates cards and icons",
+      "component": "nano-status-card.css",
+      "unit_tests": [],
+      "adversarial_tests": [
+        "T06"
+      ],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "SC-2",
+      "description": "Adversarial 2: Cards aligned regardless of card count",
+      "component": "nano-status-card.css (.nsc-list)",
+      "unit_tests": [],
+      "adversarial_tests": [
+        "T07",
+        "T08",
+        "T09",
+        "T10"
+      ],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "SC-3",
+      "description": "Adversarial 3: Long titles do not break layout",
+      "component": "nano-status-card.css (.nsc-title)",
+      "unit_tests": [],
+      "adversarial_tests": [
+        "T11"
+      ],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "SC-4",
+      "description": "Adversarial 4: Large values display without overflow",
+      "component": "nano-status-card.css (.nsc-value)",
+      "unit_tests": [],
+      "adversarial_tests": [
+        "T12"
+      ],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "SC-5",
+      "description": "Adversarial 5: Missing/invalid data does not cause render failures",
+      "component": "toRenderableCards() in nano-status-card.ts",
+      "unit_tests": [],
+      "adversarial_tests": [
+        "T13",
+        "T14",
+        "T15",
+        "T16"
+      ],
+      "result": "PASS"
+    },
+    {
+      "requirement_id": "SC-6",
+      "description": "Adversarial 6: Cards render on mobile, tablet, desktop",
+      "component": "nano-status-card.css",
+      "unit_tests": [],
+      "adversarial_tests": [
+        "T17",
+        "T18",
+        "T19"
+      ],
+      "result": "PASS"
+    }
+  ],
+  "verdict": "FAIL",
+  "environment_notes": [
+    "node/npm were not on PATH; Node v24.20.0 from the WinGet install was used for all commands.",
+    "npm ci succeeded (344 packages added, 0 vulnerabilities).",
+    "@vitest/coverage-v8@5.1.0 was missing, so the first --coverage run aborted (reports/test-console-output-attempt1-coverage-missing.log). It was then installed with \"npm install --no-save\" (package.json and package-lock.json untouched) and the run repeated.",
+    "Official run = reports/test-console-output.log (ng test nano-status-card --watch=false --coverage). Per-test durations come from a later identical run with the JSON reporter (reports/vitest-results-final.json); outcome identical: 50 tests, 49 passed, 1 failed.",
+    "Runs 2 to 4 gave the same result (1 failed, 49 passed), so the failure is deterministic (fixed fast-check seed).",
+    "Actual values for passing tests are not reported by the runner: NOT CAPTURED.",
+    "No implementation, test, config or requirement file was modified."
+  ]
+}

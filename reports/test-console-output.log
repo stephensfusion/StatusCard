@@ -1,0 +1,79 @@
+> Building...
+√ Building...
+Application bundle generation complete. [1.408 seconds] - 2026-11-17T14:08:20.313Z
+
+
+ RUN  v5.1.0 D:/requirements/frontend/NS PLATFORM/StatusCard/nano-status-card-workspace
+      Coverage enabled with v8
+
+ ✓ |nano-status-card (chromium)| projects/nano-status-card/src/lib/nano-status-card.adversarial.spec.ts (14 tests) 1641ms
+ ❯ |nano-status-card (chromium)| projects/nano-status-card/src/lib/nano-status-card.spec.ts (28 tests | 1 failed) 2696ms
+   ❯ NanoStatusCard — functional (28)
+     ✓ [FR-1][UT-1] should accept cardInfoData when the parent provides a collection 55ms
+     ✓ [UD-1] should use the nano-status-card selector from the usage documentation 4ms
+     ✓ [UD-1][UT-3] should render every card from the usage example in source order 7ms
+     ✓ [FR-2][UT-2] should render the single supplied card 6ms
+     ✓ [FR-3][UT-4] should display the title "Requirements Created" inside its own card 5ms
+     ✓ [FR-3][UT-4] should display the title "In Review" inside its own card 5ms
+     ✓ [FR-3][UT-4] should display the title "Completed Requirement" inside its own card 3ms
+     ✓ [FR-3][UT-5] should display the value "01" verbatim 4ms
+     ✓ [FR-3][UT-5] should display the value "-" verbatim 4ms
+     ✓ [FR-3][UT-5] should display the value "0" verbatim 5ms
+     ✓ [FR-11][UT-6] should apply every iconClass token on a 48px icon slot 4ms
+     ✓ [FR-8][UT-7] should apply containerClass so a consumer rule can change the card shape 4ms
+     ✓ [FR-4][FR-9][UT-8][UT-15] should lay out the Figma card with title above value and the icon at the top end 3ms
+     ✓ [FR-9][FR-10][UT-14][UT-15] should use the Figma type styles and the matching BDS colour tokens 3ms
+     ✓ [FR-6][UT-9] should update every card colour when .e-dark-mode is toggled and the collection is unchanged 5ms
+     ✓ [FR-6][UT-10] should keep every icon visible after the theme changes 5ms
+     ✓ [FR-7][UT-11] should keep the sample cards inside the mobile frame 4ms
+     ✓ [FR-7][UT-11] should keep the sample cards inside the tablet frame 4ms
+     ✓ [FR-7][UT-11] should keep the sample cards inside the desktop frame 4ms
+     ✓ [UT-12] should keep a long title inside its card without widening the frame 5ms
+     ✓ [UT-13] should keep a large value inside its card without overflowing it 5ms
+     ✓ [FR-5] should render 0 cards when the parent supplies that many 3ms
+     ✓ [FR-5] should render 1 cards when the parent supplies that many 4ms
+     ✓ [FR-5] should render 8 cards when the parent supplies that many 5ms
+     ✓ [FR-2] should show two cards that share a title as two cards 4ms
+     ✓ [FR-2] should show only the latest collection after successive replacements 7ms
+     ✓ [FEAT-4] should keep type size, padding, and radius stable when the theme changes 3ms
+     × [FR-2][FR-3][PBT] should render any collection of titles and values in source order 955ms
+ ✓ |nano-status-card (chromium)| projects/nano-status-card/src/test/test-environment.spec.ts (3 tests) 1545ms
+ ✓ |nano-status-card (chromium)| projects/nano-status-card/src/lib/nano-status-card.a11y.spec.ts (5 tests) 3294ms
+   ✓ NanoStatusCard — accessibility (5)
+     ✓ [A11Y][FR-12][single] should expose the title and value, hide the icon from assistive tech, and pass axe 1066ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |nano-status-card (chromium)| projects/nano-status-card/src/lib/nano-status-card.spec.ts > NanoStatusCard — functional > [FR-2][FR-3][PBT] should render any collection of titles and values in source order
+Error: Property failed after 8 tests
+{ seed: 20261117, path: "7:0:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1:1", endOnFailure: true }
+Counterexample: [[{"title":" !","value":"\"","iconClass":"icon-progress","containerClass":"card-progress"}]]
+Shrunk 33 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run
+
+Failure screenshot:
+  - .vitest/attachments/failure-screenshots/nano-status-card.spec.ts/NanoStatusCard---functional----FR-2--FR-3--PBT--should-render-any-collection-of-titles-and-values-in-source-order.png
+
+ ❯ buildError node_modules/fast-check/lib/fast-check.js:2469:16
+ ❯ asyncThrowIfFailed node_modules/fast-check/lib/fast-check.js:2481:8
+
+Caused by: AssertionError: expected '!"' to contain ' !'
+
+Expected: [32m"[7m [27m!"[39m
+Received: [31m"![7m"[27m"[39m
+
+ ❯ :/requirements/frontend/NS PLATFORM/StatusCard/nano-status-card-workspace/file:/D:/requirements/frontend/NS%20PLATFORM/StatusCard/nano-status-card-workspace/projects/nano-status-card/src/lib/nano-status-card.spec.ts:396:58
+ ❯ AsyncProperty.run node_modules/fast-check/lib/fast-check.js:1217:19
+ ❯ asyncPropertyExecution node_modules/fast-check/lib/fast-check.js:2564:14
+ ❯ asyncRunIt node_modules/fast-check/lib/fast-check.js:2557:15
+ ❯ :/requirements/frontend/NS PLATFORM/StatusCard/nano-status-card-workspace/file:/D:/requirements/frontend/NS%20PLATFORM/StatusCard/nano-status-card-workspace/projects/nano-status-card/src/lib/nano-status-card.spec.ts:390:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 49 passed (50)
+   Start at  17:08:21
+   Duration  7.66s (tests 74%, setup 14%, worker 12%, import 1%)
+

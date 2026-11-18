@@ -1,0 +1,40 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "nano-status-card": {
+      "projectType": "library",
+      "root": "projects/nano-status-card",
+      "sourceRoot": "projects/nano-status-card/src",
+      "prefix": "nano",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/nano-status-card/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/nano-status-card/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/nano-status-card/tsconfig.spec.json",
+            "browsers": ["ChromiumHeadless"],
+            "browserViewport": "1280x720",
+            "providersFile": "projects/nano-status-card/src/test/test-providers.ts",
+            "setupFiles": ["projects/nano-status-card/src/test/test-setup.ts"]
+          }
+        }
+      }
+    }
+  }
+}
