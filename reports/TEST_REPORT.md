@@ -150,5 +150,3 @@ FEAT-1, FEAT-2 and FEAT-3 duplicate FR-9, FR-6 and FR-10 in the requirement docu
 ## 5. Final verdict
 
 **PASS**
-
-Reason: the build succeeded, but 1 of 50 tests failed ([FR-2][FR-3][PBT] should render any collection of titles and values in source order), and code coverage could not be produced. All 14 adversarial tests and 5 accessibility tests passed.
